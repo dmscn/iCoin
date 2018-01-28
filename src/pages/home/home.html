@@ -4,6 +4,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="home">
+
+  <div *ngIf="coins" >
+      <!-- <ion-item *ngFor="let coin of coins">
+        <ion-icon name="usd" item-start></ion-icon>
+        Herbology
+        <p><strong>Valor: </strong>{{coin.value | currency:'BRL'}}</p>
+      </ion-item> -->
+
+      <ion-card *ngFor="let coin of coins">
+        <img src="{{coin.img}}">
+        <div class="card-title">{{coin.code}}</div>
+        <div class="card-subtitle">{{coin.name}}</div>
+        <div class="card-text">{{coin.value | currency:'BRL'}}</div>
+      </ion-card>
+
+    </div>
   
 </ion-content>
+ 
